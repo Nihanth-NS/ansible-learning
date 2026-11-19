@@ -1,0 +1,25 @@
+---
+- name: Inventory Hands-On Lab
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Show inventory hostname
+      ansible.builtin.debug:
+        msg: "inventory_hostname ={{ inventory_hostname }}"
+
+    - name: Show groups of current host
+      ansible.builtin.debug:
+        msg: "group_names = {{ group_names }}"
+
+    - name: Show device type
+      ansible.builtin.debug:
+        msg: "device_type = {{ device_type }}"
+
+    - name: Show location
+      ansible.builtin.debug:
+        msg: "location = {{ location }}"
+
+    - name: Show all inventory hosts
+      ansible.builtin.debug:
+        msg: "groups['all'] = {{ groups['all'] }}"
