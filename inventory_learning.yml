@@ -1,25 +1,29 @@
 ---
-- name: Inventory Hands-On Lab
+- name: Inventory Hands-On Lab 2
   hosts: all
   gather_facts: false
 
   tasks:
-    - name: Show inventory hostname
+    - name: Show current inventory hostname
       ansible.builtin.debug:
-        msg: "inventory_hostname ={{ inventory_hostname }}"
+        msg: "Current host = {{ inventory_hostname }}"
 
-    - name: Show groups of current host
+    - name: Show ansible host
+      ansible.builtin.debug:
+        msg: "ansible_host = {{ ansible_host | default('Not defined') }}"
+
+    - name: Show groups for current host
       ansible.builtin.debug:
         msg: "group_names = {{ group_names }}"
 
-    - name: Show device type
+    - name: Show OS type
       ansible.builtin.debug:
-        msg: "device_type = {{ device_type }}"
-
-    - name: Show location
-      ansible.builtin.debug:
-        msg: "location = {{ location }}"
+        msg: "os_type = {{ os_type | default('Not defined') }}"
 
     - name: Show all inventory hosts
       ansible.builtin.debug:
-        msg: "groups['all'] = {{ groups['all'] }}"
+        msg: "All hosts = {{ groups['all'] }}"
+
+    - name: Show only ACI hosts
+      ansible.builtin.debug:
+        msg: "ACI hosts = {{ groups['aci'] }}"
