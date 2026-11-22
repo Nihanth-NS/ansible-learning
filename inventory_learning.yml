@@ -4,6 +4,10 @@
   gather_facts: false
 
   tasks:
+    - name: Show vars
+      ansible.builtin.debug:
+        msg: "{{hostvars['aci01']}}"
+        
     - name: Show current inventory hostname
       ansible.builtin.debug:
         msg: "Current host = {{ inventory_hostname }}"
