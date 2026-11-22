@@ -31,3 +31,7 @@
     - name: Show only ACI hosts
       ansible.builtin.debug:
         msg: "ACI hosts = {{ groups['aci'] }}"
+
+    - name: Show all locations
+      ansible.builtin.debug:
+        msg: "All hosts locations = {{ location }}"
