@@ -43,7 +43,7 @@
     - name: check the output 2
       ansible.builtin.set_fact:
         Status: False
-      when: {{ output.stdout }} != "enabled" 
+      when: output.stdout != "enabled" 
 
     - name: Show all locations
       ansible.builtin.debug:
