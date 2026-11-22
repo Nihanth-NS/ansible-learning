@@ -32,8 +32,9 @@
 
     - name: Show only ACI hosts
       ansible.builtin.command:
-        cmd: echo "enabled"
+        cmd: echo "disabled"
       register: output
+      changed_when: false
 
     - name: check the output
       ansible.builtin.set_fact:
