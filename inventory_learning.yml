@@ -38,7 +38,7 @@
     - name: check the output
       ansible.builtin.set_fact:
         Status: TRUE
-      when: {{ output.stdout }} == "enabled"
+      when: output.stdout == "enabled"
 
     - name: check the output 2
       ansible.builtin.set_fact:
