@@ -38,12 +38,12 @@
     - name: check the output
       ansible.builtin.set_fact:
         Status: TRUE
-      when: output.stdout == "enabled"
+      when: output.stdout == "{{ excepted }}"
 
     - name: check the output 2
       ansible.builtin.set_fact:
         Status: False
-      when: output.stdout != "enabled" 
+      when: output.stdout != "{{ excepted }}"
 
     - name: Show all locations
       ansible.builtin.debug:
