@@ -1,0 +1,17 @@
+---
+- name: this play is dope
+  hosts: localhost
+  gather_facts: false
+  tasks:
+   - name: Current name is
+     ansible.builtin.debug:
+      var: command_output
+
+   - name: Current name is
+     ansible.builtin.include_role:
+      name: folder_2_roles
+
+   - name: New name is
+     ansible.builtin.debug:
+      msg: "Output is {{ the_last.stdout }}"
+  

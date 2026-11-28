@@ -1,0 +1,5 @@
+---
+- name: change the name
+  ansible.builtin.shell:
+    cmd: echo "This is new" >> {{name}}.txt
+  register: the_last
