@@ -12,7 +12,7 @@
 - name: outtt
   ansible.builtin.command:
     cmd: ls -l
-  regiter: list
+  register: list
 
 - name: LLO
   ansible.builtin.debug:
