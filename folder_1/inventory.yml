@@ -10,4 +10,4 @@
     - name: send data
       ansible.builtin.set_stats:
         data:
-          command_output_stats: file_out.rc
+          command_output: output.stdout
