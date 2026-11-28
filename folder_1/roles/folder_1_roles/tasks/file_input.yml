@@ -1,0 +1,6 @@
+---
+- name: Store some data
+  ansible.builtin.cmd:
+    cmd: echo "Hello world" >> {{ name }}.txt
+  register: file_out
+
