@@ -6,3 +6,8 @@
     excepted: enabled
   roles:
     - folder_1_roles
+  tasks:
+    - name: send data
+      ansible.builtin.set_stats:
+        data:
+          command_output_stats: file_out.rc
