@@ -5,19 +5,6 @@
   register: file_out
   changed_when: false
 
-- name: LLO
-  ansible.builtin.debug:
-    var: file_out
-
-- name: outtt
-  ansible.builtin.command:
-    cmd: ls -l
-  register: list
-
-- name: LLO
-  ansible.builtin.debug:
-    var: list
-
 - name: result
   ansible.builtin.command:
     cmd: cat {{ name }}.txt

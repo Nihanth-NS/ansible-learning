@@ -7,6 +7,9 @@
   roles:
     - folder_1_roles
   tasks:
+    - name: ppp
+      ansible.builtin.debug:
+        msg: "{{ output.stdout }}"
     - name: send data
       ansible.builtin.set_stats:
         data:
