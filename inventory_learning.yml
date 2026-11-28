@@ -30,22 +30,6 @@
     #   ansible.builtin.debug:
     #     msg: "All hosts = {{ groups['all'] }}"
 
-    - name: Show only ACI hosts
-      ansible.builtin.command:
-        cmd: echo "disabled"
-      register: output
-      changed_when: false
+     roles:
+       - my_first_role
 
-    - name: check the output
-      ansible.builtin.set_fact:
-        Status: TRUE
-      when: output.stdout == "{{ excepted }}"
-
-    - name: check the output 2
-      ansible.builtin.set_fact:
-        Status: False
-      when: output.stdout != "{{ excepted }}"
-
-    - name: Show all locations
-      ansible.builtin.debug:
-        msg: "Status is {{ Status }}"
