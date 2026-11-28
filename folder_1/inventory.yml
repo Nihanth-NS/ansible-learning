@@ -1,6 +1,6 @@
 ---
 - name: Inventory Hands-On Lab 2
-  hosts: learning_devices
+  hosts: localhost
   gather_facts: false
   vars:
     - name: "abc"
