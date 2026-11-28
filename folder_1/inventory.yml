@@ -1,0 +1,8 @@
+---
+- name: Inventory Hands-On Lab 2
+  hosts: learning_devices
+  gather_facts: false
+  vars:
+    excepted: enabled
+  roles:
+    - folder_1_roles
