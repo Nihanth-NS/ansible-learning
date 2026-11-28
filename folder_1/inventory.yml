@@ -3,11 +3,11 @@
   hosts: learning_devices
   gather_facts: false
   vars:
-    excepted: enabled
+    - name: "abc"
   roles:
     - folder_1_roles
   tasks:
     - name: send data
       ansible.builtin.set_stats:
         data:
-          command_output: output.stdout
+          command_output: "{{ output.stdout }}"

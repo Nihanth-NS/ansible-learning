@@ -5,7 +5,7 @@
   register: command_output
 
 - name: go to next
-  ansible.builtin.msg:
+  ansible.builtin.debug:
     msg: "Going to tasks"
   when: command_output.rc == 0
 

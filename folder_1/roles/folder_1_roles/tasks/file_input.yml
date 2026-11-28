@@ -10,7 +10,7 @@
   register: output
 
 - name: disply
-  ansible.builtin.msg:
+  ansible.builtin.debug:
     msg: "Output is {{ output.stdout }}"
   
 
