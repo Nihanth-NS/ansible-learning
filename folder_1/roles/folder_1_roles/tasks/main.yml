@@ -1,0 +1,13 @@
+---
+- name: check the command
+  ansible.builtin.command:
+    cmd: touch "{{ name }}".txt
+  register: command_output
+
+- name: go to next
+  ansible.builtin.msg:
+    msg: Going to tasks
+  when: command_output.rc == 0
+
+- name: Next one
+  ansible.builtin.include_tasks: file_input.yml
