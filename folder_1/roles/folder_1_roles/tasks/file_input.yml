@@ -1,6 +1,16 @@
 ---
 - name: Store some data
-  ansible.builtin.cmd:
+  ansible.builtin.command:
     cmd: echo "Hello world" >> {{ name }}.txt
   register: file_out
+
+- name: result
+  ansible.builtin.command:
+    cmd: cat {{ name }}.txt
+  register: output
+
+- name: disply
+  ansible.builtin.msg:
+    msg: "Output is {{ output.stdout }}"
+  
 
