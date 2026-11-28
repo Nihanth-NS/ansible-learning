@@ -3,6 +3,7 @@
   ansible.builtin.command:
     cmd: touch "{{ name }}".txt
   register: command_output
+  changed_when: false
 
 - name: go to next
   ansible.builtin.debug:

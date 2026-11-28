@@ -3,14 +3,18 @@
   ansible.builtin.command:
     cmd: echo "Hello world" >> {{ name }}.txt
   register: file_out
+  changed_when: false
 
 - name: result
   ansible.builtin.command:
     cmd: cat {{ name }}.txt
   register: output
+  changed_when: false
+  when: file_out.rc == 0
 
 - name: disply
   ansible.builtin.debug:
     msg: "Output is {{ output.stdout }}"
+  when: output.rc == 0
   
 
