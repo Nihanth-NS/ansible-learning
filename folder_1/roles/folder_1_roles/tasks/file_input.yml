@@ -14,7 +14,7 @@
 
 - name: disply
   ansible.builtin.debug:
-    msg: "Output is {{ output.stdout }}"
+    var: output
   when: output.rc == 0
   
 
